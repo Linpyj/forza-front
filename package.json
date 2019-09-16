@@ -1,0 +1,20 @@
+{
+  "name": "rin-app2",
+  "scripts": {
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "generate": "nuxt-ts generate",
+    "start": "nuxt-ts start"
+  },
+  "dependencies": {
+    "@nuxt/typescript-runtime": "^0.1.6",
+    "@nuxtjs/axios": "^5.6.0",
+    "nuxt": "^2.9.2",
+    "nuxt-property-decorator": "^2.4.0",
+    "vuex-type-helper": "^1.2.2",
+    "axios": "^0.19.0"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.2.7"
+  }
+}
