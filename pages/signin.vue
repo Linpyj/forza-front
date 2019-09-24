@@ -49,8 +49,8 @@ import { Vue, Component } from "vue-property-decorator"
 export default class Signin extends Vue {
   email: string = ""
   password: string = ""
-  
-  async signin() {
+
+  async signin(email, password) {
     try {
       await this.$store.dispatch('user/signin', {
         email: this.email,

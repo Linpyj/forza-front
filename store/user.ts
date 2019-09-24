@@ -19,7 +19,7 @@ export const actions = {
 
   async signin({ commit }, { email, password }) {
     try {
-      const user = await (this as any).$axios.$post("/sessions/login", { email,password })
+      const user = await (this as any).$axios.$post("/api/sessions/login", { email,password })
       commit("setCurrent", user)
     } catch (error) {
 
@@ -28,7 +28,7 @@ export const actions = {
 
   async signout({ commit }) {
     try {
-      commit("setCUrrent", null)
+      commit("setCurrent", null)
     } catch (error) {
 
     }
