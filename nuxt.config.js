@@ -7,5 +7,8 @@ export default {
         ["@babel/plugin-proposal-class-properties", { loose: true }]
       ]
     }
-  }
+  },
+  modules: [
+    "@nuxtjs/axios"
+  ],
 }
