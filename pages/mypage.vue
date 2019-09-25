@@ -1,5 +1,5 @@
 <template>
-  <h1>Hi, {{currentUser}}</h1>
+  <h1>Hi, {{currentUser.user.name}}</h1>
 </template>
 
 
