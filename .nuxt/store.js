@@ -17,6 +17,7 @@ void (function updateModules() {
   store.modules = store.modules || {}
 
   resolveStoreModules(require('../store/admin.ts'), 'admin.ts')
+  resolveStoreModules(require('../store/task.ts'), 'task.ts')
   resolveStoreModules(require('../store/user.ts'), 'user.ts')
 
   // If the environment supports hot reloading...
@@ -25,6 +26,7 @@ void (function updateModules() {
     // Whenever any Vuex module is updated...
     module.hot.accept([
       '../store/admin.ts',
+      '../store/task.ts',
       '../store/user.ts',
     ], () => {
       // Update `root.modules` with the latest definitions.
