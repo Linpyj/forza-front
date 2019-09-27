@@ -11,4 +11,5 @@ export default {
   modules: [
     "@nuxtjs/axios"
   ],
+  css: ['@/assets/main.scss']
 }
