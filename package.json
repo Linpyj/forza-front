@@ -13,6 +13,7 @@
     "bulma": "^0.7.5",
     "nuxt": "^2.9.2",
     "nuxt-property-decorator": "^2.4.0",
+    "vuex-persistedstate": "^2.5.4",
     "vuex-type-helper": "^1.2.2"
   },
   "devDependencies": {
