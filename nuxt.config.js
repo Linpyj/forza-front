@@ -13,6 +13,7 @@ export default {
   ],
   plugins: [
     { src: '~plugins/localStorage', ssr: false },
+    { src: '~/plugins/cookie-storage.js' }
   ],
   css: ['@/assets/main.scss']
 }
