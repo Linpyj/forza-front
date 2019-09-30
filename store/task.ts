@@ -32,19 +32,16 @@ export const mutations = {
 export const actions = {
   async fetchTasks({commit}) {
     try {
-      const tasks = await (this as any).$axios.get('/api/task')
-      commit('setTasks')
+      const tasks = await (this as any).$axios.get('http://localhost:3000/api/task')
+      commit('setTasks',tasks)
     } catch {
 
     }
   },
   async createTask({commit}, {content,detail}) {
     try {
-      const task = await (this as any).$axios.post('/api/task', {
-        content: content,
-        detail: detail
-      })
-      commit('setTasks')
+      const task = await (this as any).$axios.post('http://localhost:3000/api/task', {content,detail})
+      commit('setTasks',task)
     } catch (error) {
 
     }

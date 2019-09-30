@@ -18,20 +18,12 @@
           </div>
           <div class="field">
             <p class="control">
-              <input
-                v-model="password"
-                class="input"
-                type="password"
-                placeholder="Password"
-              >
+              <input v-model="password" class="input" type="password" placeholder="Password">
             </p>
           </div>
           <div class="field">
             <p class="control">
-              <a
-                class="button is-primary is-fullwidth"
-                @click="signin"
-              >
+              <a class="button is-primary is-fullwidth" @click="signin">
                 Sign In
               </a>
             </p>
