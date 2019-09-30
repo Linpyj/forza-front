@@ -11,5 +11,8 @@ export default {
   modules: [
     "@nuxtjs/axios"
   ],
+  plugins: [
+    { src: '~plugins/localStorage', ssr: false },
+  ],
   css: ['@/assets/main.scss']
 }
