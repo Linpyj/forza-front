@@ -28,11 +28,10 @@ export const mutations = {
   }
 }
 
-
 export const actions = {
   async fetchTasks({commit}) {
     try {
-      const tasks = await (this as any).$axios.get('http://localhost:3000/api/task')
+      const tasks = await (this as any).$axios.$get('http://localhost:3000/api/tasks')
       commit('setTasks',tasks)
     } catch {
 
@@ -40,7 +39,7 @@ export const actions = {
   },
   async createTask({commit}, {content,detail}) {
     try {
-      const task = await (this as any).$axios.post('http://localhost:3000/api/task', {content,detail})
+      const task = await (this as any).$axios.$post('http://localhost:3000/api/tasks', {content,detail})
       commit('setTasks',task)
     } catch (error) {
 

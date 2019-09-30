@@ -5,7 +5,7 @@
         Welcome to {{currentUser.user.name}}'s Page !
       </div>
       <div>
-        {{ fetchTasks }}
+        {{ tasks }}
       </div>
 
 
@@ -28,11 +28,11 @@
           </th>
         </tr>
         <tr
-          v-for="task in fetchTasks"
+          v-for="task in tasks"
           :key="task.id"
         >
           <td class="has-text-centered">
-            
+
           </td>
           <td class="has-text-centered">
             {{ task.content }}
@@ -88,7 +88,7 @@ export default class Mypage extends Vue {
     return this.$store.state.user.current
   }
 
-  get fetchTasks() {
+  get tasks() {
     return this.$store.state.task.tasks
   }
 
@@ -106,6 +106,10 @@ export default class Mypage extends Vue {
     } catch {
       console.log('errorですよ')
     }
+  }
+
+  async mounted() {
+    await this.$store.dispatch('task/fetchTasks')
   }
 
 }
