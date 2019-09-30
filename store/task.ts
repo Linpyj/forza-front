@@ -16,6 +16,7 @@ export const getters = {
   }
 }
 
+
 export const mutations = {
   setContent(state, payload) {
     state.content = payload
