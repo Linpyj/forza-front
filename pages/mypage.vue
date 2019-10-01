@@ -4,14 +4,7 @@
       <div class="title" style="padding: 0.4em 0.5em; color: #494949;  background: #f4f4f4; border-bottom: solid 3px #d7d7d7;">
         Welcome to {{currentUser.user.name}}'s Page !
       </div>
-      <div>
-        <h1>currentUserのjson</h1>
-        {{ currentUser }}
-      </div>
-      <div>
-        <h1>taskのjson</h1>
-        {{ tasks }}
-      </div>
+      
 
 
       <div class="title">
@@ -33,7 +26,7 @@
         <tbody>
           <tr v-for="task in tasks" :key="task.id">
             <td class="has-text-centered">
-              <a class="button is-warning" @click="destroyTask">
+              <a class="button is-warning" @click="destroyTask(task.id)">
                 Done
               </a>
             </td>
@@ -41,7 +34,7 @@
               {{ task.content }}
             </td>
             <td class="has-text-centered">
-              {{ task.detail}}
+              {{ task.detail }}
             </td>
           </tr>
         </tbody>
@@ -49,18 +42,15 @@
 
 
 
-
+      <div class="title">
+        New Task
+      </div>
       <div class="columns">
         <div class="column is-6 is-offset-3">
           <div class="box">
             <div class="field">
               <p class="control">
-                <input
-                  v-model="content"
-                  class="input"
-                  type="content"
-                  placeholder="やること"
-                >
+                <input v-model="content" class="input" type="content" placeholder="やること">
               </p>
             </div>
             <div class="field">
@@ -103,8 +93,8 @@ export default class Mypage extends Vue {
   async createTask(content, detail) {
     try {
       await this.$store.dispatch('task/createTask', {
-        content: content,
-        detail: detail
+        content: this.content,
+        detail: this.detail
       })
       await this.$store.dispatch('task/fetchTasks')
     } catch {
@@ -112,8 +102,8 @@ export default class Mypage extends Vue {
     }
   }
 
-  async destroyTask({ commit }, {id}) {
-    await this.$store.dispatch('task/destroyTask', {id: this.id})
+  async destroyTask(id) {
+    await this.$store.dispatch('task/destroyTask', {id: id})
     await this.$store.dispatch('task/fetchTasks')
   }
 
