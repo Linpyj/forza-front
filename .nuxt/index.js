@@ -13,8 +13,8 @@ import { createStore } from './store.js'
 /* Plugins */
 
 import nuxt_plugin_axios_5d0f98ac from 'nuxt_plugin_axios_5d0f98ac' // Source: ./axios.js (mode: 'all')
-import nuxt_plugin_cookiestorage_d9114822 from 'nuxt_plugin_cookiestorage_d9114822' // Source: ../plugins/cookie-storage.js (mode: 'all')
 import nuxt_plugin_axios_3566aa80 from 'nuxt_plugin_axios_3566aa80' // Source: ../plugins/axios (mode: 'all')
+import nuxt_plugin_cookiestorage_d9114822 from 'nuxt_plugin_cookiestorage_d9114822' // Source: ../plugins/cookie-storage.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -169,12 +169,12 @@ async function createApp(ssrContext) {
     await nuxt_plugin_axios_5d0f98ac(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_cookiestorage_d9114822 === 'function') {
-    await nuxt_plugin_cookiestorage_d9114822(app.context, inject)
-  }
-
   if (typeof nuxt_plugin_axios_3566aa80 === 'function') {
     await nuxt_plugin_axios_3566aa80(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_cookiestorage_d9114822 === 'function') {
+    await nuxt_plugin_cookiestorage_d9114822(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first
