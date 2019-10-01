@@ -21,7 +21,6 @@
         <thead>
           <tr>
             <th class="has-text-centered">
-              Done
             </th>
             <th class="has-text-centered">
               Content
@@ -34,6 +33,9 @@
         <tbody>
           <tr v-for="task in tasks" :key="task.id">
             <td class="has-text-centered">
+              <a class="button is-warning" @click="destroyTask">
+                Done
+              </a>
             </td>
             <td class="has-text-centered">
               {{ task.content }}
@@ -108,6 +110,11 @@ export default class Mypage extends Vue {
     } catch {
       console.log('errorですよ')
     }
+  }
+
+  async destroyTask({ commit }, {id}) {
+    await this.$store.dispatch('task/destroyTask', {id: this.id})
+    await this.$store.dispatch('task/fetchTasks')
   }
 
   async mounted() {

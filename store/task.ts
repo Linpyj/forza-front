@@ -45,5 +45,13 @@ export const actions = {
     } catch (error) {
 
     }
+  },
+  async destroyTask({commit}, {id}) {
+    try {
+      const task = await (this as any).$axios.$delete('http://localhost:3000/api/tasks'+ id)
+      commit('setTasks',task)
+    } catch {
+
+    }
   }
 }

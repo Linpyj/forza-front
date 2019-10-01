@@ -18,7 +18,7 @@ export default ({ store, req, isDev }) => {
     createPersistedState({
         key: 'my-key',
         paths: [
-            "count"
+            "user"
         ],
         storage: {
             getItem: (key) => process.client ? Cookies.getJSON(key) : cookie.parse(req.headers.cookie || '')[key],
