@@ -5,6 +5,11 @@
         Welcome to {{currentUser.user.name}}'s Page !
       </div>
       <div>
+        <h1>currentUserのjson</h1>
+        {{ currentUser }}
+      </div>
+      <div>
+        <h1>taskのjson</h1>
         {{ tasks }}
       </div>
 
@@ -12,35 +17,32 @@
       <div class="title">
         What to Do
       </div>
-      <table
-        class="table"
-        style="width: 100%;"
-      >
-        <tr>
-          <th class="has-text-centered">
-            Done
-          </th>
-          <th class="has-text-centered">
-            Content
-          </th>
-          <th class="has-text-centered">
-            Detail
-          </th>
-        </tr>
-        <tr
-          v-for="task in tasks"
-          :key="task.id"
-        >
-          <td class="has-text-centered">
-
-          </td>
-          <td class="has-text-centered">
-            {{ task.content }}
-          </td>
-          <td class="has-text-centered">
-            {{ task.detail}}
-          </td>
-        </tr>
+      <table class="table" style="width: 100%;">
+        <thead>
+          <tr>
+            <th class="has-text-centered">
+              Done
+            </th>
+            <th class="has-text-centered">
+              Content
+            </th>
+            <th class="has-text-centered">
+              Detail
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="task in tasks" :key="task.id">
+            <td class="has-text-centered">
+            </td>
+            <td class="has-text-centered">
+              {{ task.content }}
+            </td>
+            <td class="has-text-centered">
+              {{ task.detail}}
+            </td>
+          </tr>
+        </tbody>
       </table>
 
 

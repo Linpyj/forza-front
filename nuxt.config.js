@@ -11,5 +11,9 @@ export default {
   modules: [
     "@nuxtjs/axios"
   ],
+  plugins: [
+    '~/plugins/cookie-storage.js',
+    "~/plugins/axios",
+  ],
   css: ['@/assets/main.scss']
 }
