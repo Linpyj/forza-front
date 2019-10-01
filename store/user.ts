@@ -32,7 +32,15 @@ export const actions = {
     } catch (error) {
 
     }
-  }
+  },
 
+  async signUp({ commit }, { name, email, password }) {
+    try {
+      const user = await (this as any).$axios.$post('http://localhost:3000/api/users', { name, email, password })
+      commit('setCurrent', user)
+    } catch (error) {
+
+    }
+  }
 
 }

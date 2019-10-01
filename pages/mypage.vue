@@ -4,8 +4,10 @@
       <div class="title" style="padding: 0.4em 0.5em; color: #494949;  background: #f4f4f4; border-bottom: solid 3px #d7d7d7;">
         Welcome to {{currentUser.user.name}}'s Page !
       </div>
-      
 
+      <div>
+        {{ currentUser }}
+      </div>
 
       <div class="title">
         What to Do
