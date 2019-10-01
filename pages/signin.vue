@@ -23,7 +23,7 @@
           </div>
           <div class="field">
             <p class="control">
-              <a class="button is-primary is-fullwidth" @click="signin">
+              <a class="button is-warning is-fullwidth" @click="signin">
                 Sign In
               </a>
             </p>

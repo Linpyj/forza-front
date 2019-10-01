@@ -27,7 +27,7 @@
             </div>
             <div class="field">
               <p class="control">
-                <a class="button is-primary is-fullwidth" @click="signUp">
+                <a class="button is-warning is-fullwidth" @click="signUp">
                   新規登録
                 </a>
               </p>
@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="title has-text-centered">
-        ログインページへ
+        登録済みの方はこちら
       </div>
       <div class="columns">
         <div class="column is-6 is-offset-3">
