@@ -32,7 +32,7 @@ export const mutations = {
 export const actions = {
   async fetchTasks({commit}) {
     try {
-      const tasks = await (this as any).$axios.$get('http://localhost:3000/api/tasks')
+      const tasks = await (this as any).$axios.$get('http://localhost:3000/api/v1/tasks')
       commit('setTasks',tasks)
     } catch {
 
@@ -40,7 +40,7 @@ export const actions = {
   },
   async createTask({commit}, {content,detail}) {
     try {
-      const task = await (this as any).$axios.$post('http://localhost:3000/api/tasks', {content,detail})
+      const task = await (this as any).$axios.$post('http://localhost:3000/api/v1/tasks', {content,detail})
       commit('setTasks',task)
     } catch (error) {
 
@@ -48,7 +48,7 @@ export const actions = {
   },
   async destroyTask({commit}, {id}) {
     try {
-      const task = await (this as any).$axios.$delete('http://localhost:3000/api/tasks/'+ id, {id: id})
+      const task = await (this as any).$axios.$delete('http://localhost:3000/api/v1/tasks/'+ id, {id: id})
       commit('setTasks',task)
     } catch {
 
