@@ -39,6 +39,11 @@ import { Vue, Component } from "vue-property-decorator"
 @Component
 
 export default class Signin extends Vue {
+
+  get currentUser() {
+    return this.$store.state.user.current
+  }
+
   email: string = ""
   password: string = ""
 
@@ -52,7 +57,7 @@ export default class Signin extends Vue {
       const currentUser = this.$store.state.user.current
       if (!currentUser) {
         this.$router.push('/login');
-      } else if (currentUser.is_manager) {
+      } else if (currentUser.user.is_manager) {
         this.$router.push('/admin');
       } else {
         this.$router.push('/mypage');
@@ -60,6 +65,13 @@ export default class Signin extends Vue {
     } catch(e) {
       console.log('errorです')
     }
-  }
+  
 }
+
+
+}
+
+
+
+
 </script>

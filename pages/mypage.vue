@@ -7,8 +7,10 @@
       <a class="button is-danger" @click="signout">
         Sign Out
       </a>
-      <div>
-        {{ currentUser }}
+      <div v-if="currentUser.user.is_manager">
+        <nuxt-link to="/admin" class="button is-success">
+          管理者ページへ
+        </nuxt-link>
       </div>
       <div class="title">
         What to Do

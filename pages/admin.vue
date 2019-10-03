@@ -1,12 +1,9 @@
 <template>
 
   <div class="container">
-    <section class="section" v-if="currentUser.is_manager = true">
+    <section class="section" v-if="currentUser.user.is_manager">
       <div class="title" style="padding: 0.4em 0.5em; color: #494949;  background: #f4f4f4; border-bottom: solid 3px #d7d7d7;">
         管理者ページ
-      </div>
-      <div>
-        {{ currentUser }}
       </div>
       <div class="title">
         User Index
@@ -31,10 +28,13 @@
           </td>
         </tr>
       </table>
+      <nuxt-link to="/mypage" class="button is-success">
+        マイページに戻る
+      </nuxt-link>
     </section>
 
 
-    <section  v-else="currentUser.is_manager = false">
+    <section  v-else="">
       <nuxt-link to="/mypage" class="button is-success">
         マイページに戻る
       </nuxt-link>
