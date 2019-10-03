@@ -49,7 +49,14 @@ export default class Signin extends Vue {
         password: this.password
         }
       )
+      const currentUser = this.$store.state.user.current
+      if (!currentUser) {
+        this.$router.push('/login');
+      } else if (currentUser.is_manager) {
+        this.$router.push('/admin');
+      } else {
         this.$router.push('/mypage');
+      }
     } catch(e) {
       console.log('errorです')
     }

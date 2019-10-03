@@ -7,6 +7,9 @@
       <a class="button is-danger" @click="signout">
         Sign Out
       </a>
+      <div>
+        {{ currentUser }}
+      </div>
       <div class="title">
         What to Do
       </div>
