@@ -4,6 +4,9 @@
       <div class="title" style="padding: 0.4em 0.5em; color: #494949;  background: #f4f4f4; border-bottom: solid 3px #d7d7d7;">
         Welcome to {{currentUser.user.name}}'s Page !
       </div>
+      <a class="button is-danger" @click="signout">
+        Sign Out
+      </a>
       <div class="title">
         What to Do
       </div>
@@ -106,6 +109,11 @@ export default class Mypage extends Vue {
 
   async mounted() {
     await this.$store.dispatch('task/fetchTasks')
+  }
+
+  async signout() {
+    await this.$store.dispatch('user/signout')
+    this.$router.push('/')
   }
 
 }
