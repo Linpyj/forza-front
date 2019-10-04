@@ -8,12 +8,7 @@
           </h3>
           <div class="field">
             <p class="control">
-              <input
-                v-model="email"
-                class="input"
-                type="email"
-                placeholder="Email"
-              >
+              <input v-model="email" class="input" type="email" placeholder="Email">
             </p>
           </div>
           <div class="field">
@@ -65,7 +60,7 @@ export default class Signin extends Vue {
     } catch(e) {
       console.log('errorです')
     }
-  
+
 }
 
 
